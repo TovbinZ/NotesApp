@@ -1,9 +1,3 @@
-
-# import sys
-# def trace(frame, event, arg):
-#     return trace
-# sys.settrace(trace)
-
 from tkinter import * 
 import tkinter.font as font
 import sqlite3
@@ -14,7 +8,8 @@ import time
 import markdown
 
 
-class Data():
+
+class Data(): 
 
 	#Changes the Font for the whole app
 	def Font(): 
@@ -362,7 +357,6 @@ class Pages():
 		def back(): 
 			root.destroy()
 			Main.Start()
-		
 		signUpButton = Button(frame, text="Sign Up", command=lambda: submit(Username.get()))  
 		signUpButton.grid(row=3, column=0, columnspan=2)  
 		BackButton = Button(frame, text="Back", command=back) 
@@ -378,11 +372,9 @@ class Pages():
 		LoginPage .geometry("1600x1000") 
 
 		#check if password matches password for user in database
-		def  VarifyUser(Name, Password): 
-			print('1')
-  
+		def  VarifyUser(Name, Password):   
 			conn = sqlite3.connect('Notes_Database.db')
-			print('1')
+
 			c = conn.cursor()
 			NameValue = str(Name)
 			c.execute("SELECT * FROM users") 
